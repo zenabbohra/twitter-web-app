@@ -67,14 +67,14 @@ export default function SignIn() {
             type="submit"
             fullWidth
             variant="contained"
-            color="primary"
+            color="secondary"
             className={classes.submit}
           >
             Sign In
           </Button>
-              <Link href="#" variant="body2">
-                {"Don't have an account? Sign Up"}
-              </Link>
+          <Link href="#" variant="body2">
+            {"Don't have an account? Sign Up"}
+          </Link>
         </form>
       </div>
     </Container>
