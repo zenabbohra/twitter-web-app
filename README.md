@@ -1,4 +1,4 @@
-# TwitterWebApp
+# TwitterWebApp [![Build Status](https://travis-ci.com/zenabbohra/twitter-web-app.svg?branch=master)](https://travis-ci.com/zenabbohra/twitter-web-app)
 
 This application is trying to mimic Twitter experience
 and is bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
