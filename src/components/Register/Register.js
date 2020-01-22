@@ -47,8 +47,7 @@ class Register extends Component {
       })
         .then(response => response.json())
         .then(user => {
-          if(user){
-            console.log(user);
+          if(user.name){
             onRouteChange('home');
             loadUser(user);
           }else {
@@ -70,7 +69,7 @@ class Register extends Component {
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
-          <form className={styles.form} onSubmit={(e) => e.preventDefault()} noValidate>
+          {/*<form className={styles.form} onSubmit={(e) => e.preventDefault()} noValidate>*/}
             <Grid container spacing={2} >
               <Grid item xs={12}>
                 <TextField
@@ -128,7 +127,7 @@ class Register extends Component {
                 </Link>
               </Grid>
             </Grid>
-          </form>
+          {/*</form>*/}
         </div>
       </Container>
     );
