@@ -67,9 +67,10 @@ class Register extends Component {
       })
         .then(response => response.json())
         .then(user => {
-          if(user.length >0){
+          if(user){
+            console.log(user);
             onRouteChange('home');
-            loadUser(user[0]);
+            loadUser(user);
           }else {
             console.log(user);
           }
@@ -78,7 +79,7 @@ class Register extends Component {
   };
 
   render() {
-    const classesFunc =()=> {
+    const classesFunc = () => {
       const useStyles = makeStyles(theme => ({
         paper: {
           marginTop: theme.spacing(8),
@@ -112,7 +113,7 @@ class Register extends Component {
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
-          <form className={classesFunc().form} noValidate>
+          <form className={classesFunc().form} onSubmit={(e) => e.preventDefault()} noValidate>
             <Grid container spacing={2}>
               <Grid item xs={12}>
                 <TextField
