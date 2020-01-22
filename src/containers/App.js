@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import './App.css';
-import Signin from '../components/Signin/Signin';
+import SignIn from '../components/Signin/Signin';
 import Register from "../components/Register/Register";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      route: 'sign in',
+      route: 'register',
       user: {
         name: '',
         email: ''
