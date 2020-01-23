@@ -7,7 +7,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      route: 'register',
+      route: 'sign in',
       user: {
         name: '',
         email: ''
@@ -22,7 +22,6 @@ class App extends Component {
     } else {
       this.setState({route: routeInput})
     }
-    // route = routeInput;
   };
 
   loadUser = (data) => {

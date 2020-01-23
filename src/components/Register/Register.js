@@ -69,7 +69,6 @@ class Register extends Component {
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
-          {/*<form className={styles.form} onSubmit={(e) => e.preventDefault()} noValidate>*/}
             <Grid container spacing={2} >
               <Grid item xs={12}>
                 <TextField
@@ -121,13 +120,10 @@ class Register extends Component {
               Sign Up
             </Button>
             <Grid container className={styles.link}>
-              <Grid item>
-                <Link href="#" variant="body2" >
+                <Link href="#" variant="body2" onClick={() => this.props.onRouteChange('sign in')}>
                   Already have an account? Sign in
                 </Link>
-              </Grid>
             </Grid>
-          {/*</form>*/}
         </div>
       </Container>
     );
