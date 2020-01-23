@@ -59,7 +59,6 @@ export default class SignIn extends Component {
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
-          {/*<form className={styles.form} onSubmit={(e) => e.preventDefault()} noValidate>*/}
             <TextField
               variant="outlined"
               margin="normal"
@@ -95,13 +94,10 @@ export default class SignIn extends Component {
               Sign In
             </Button>
             <Grid container className={styles.link}>
-              <Grid item>
                 <Link href="#" variant="body2" onClick={this.props.onRegisterClickFromSignInPage}>
                   Don't have an account? Sign Up
                 </Link>
-              </Grid>
             </Grid>
-          {/*</form>*/}
         </div>
       </Container>
     );
