@@ -94,7 +94,7 @@ export default class SignIn extends Component {
               Sign In
             </Button>
             <Grid container className={styles.link}>
-                <Link href="#" variant="body2" onClick={this.props.onRegisterClickFromSignInPage}>
+                <Link href="#" variant="body2" onClick={() => this.props.onRegisterClickFromSignInPage()}>
                   Don't have an account? Sign Up
                 </Link>
             </Grid>

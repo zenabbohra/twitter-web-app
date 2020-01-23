@@ -16,6 +16,7 @@ exports[`<Signin /> renders has one <Button/> 1`] = `
 exports[`<Signin /> renders has one <Link/> 1`] = `
 <WithStyles(ForwardRef(Link))
   href="#"
+  onClick={[Function]}
   variant="body2"
 >
   Don't have an account? Sign Up
