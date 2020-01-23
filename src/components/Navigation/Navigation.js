@@ -7,11 +7,14 @@ import Typography from "@material-ui/core/Typography";
 
 const Navigation = ({route, userName }) => {
   const preventDefault = event => event.preventDefault();
-  if (route === 'home') {
     return <Box display="flex" alignItems="center" justifyContent="space-between" minHeight={48} marginLeft={2}>
-      <Typography variant="body1" color="Primary" component="p">
-        Welcome {userName}
-      </Typography>
+      {
+        route === 'home' ?
+          <Typography variant="body1" color="Primary" component="p">
+            Welcome {userName}
+          </Typography> :
+          <Home/>
+      }
       <Box display="flex" alignItems="center">
         <SearchBox/>
         <Box margin={2}>
@@ -21,22 +24,6 @@ const Navigation = ({route, userName }) => {
         </Box>
       </Box>
     </Box>
-  } else if (route === 'user profile') {
-    return <nav>
-      <Box display="flex" alignItems="center" justifyContent="space-between" minHeight={48} marginLeft={2}>
-        <Home/>
-        <Box display="flex" alignItems="center">
-          <SearchBox/>
-          <Box margin={2}>
-            <Link href="#" onClick={preventDefault} variant="body1">
-              Sign out
-            </Link>
-          </Box>
-        </Box>
-      </Box>
-    </nav>
-  }
-  return <></>;
 };
 
 export default Navigation;

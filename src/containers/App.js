@@ -8,7 +8,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      route: 'home',
+      route: 'user profile',
       user: {
         name: '',
         email: ''
@@ -46,6 +46,8 @@ class App extends Component {
         return <Register onRouteChange={onRouteChange} loadUser={loadUser}/>;
       case 'home':
         return <Navigation userName={user.name} route={route}/>;
+      case 'user profile':
+        return <Navigation route={route}/>;
       default:
         return <SignIn
           onRouteChange={onRouteChange}
