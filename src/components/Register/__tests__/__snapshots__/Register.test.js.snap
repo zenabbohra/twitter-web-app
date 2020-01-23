@@ -2,6 +2,7 @@
 
 exports[`<Register /> renders has one <Button/> 1`] = `
 <WithStyles(ForwardRef(Button))
+  className="submit"
   color="primary"
   fullWidth={true}
   onClick={[Function]}

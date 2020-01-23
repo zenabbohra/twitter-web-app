@@ -15,12 +15,14 @@ class App extends Component {
     };
   }
 
-  onRouteChange = (route) => {
+  onRouteChange = (routeInput) => {
+    let { route } = this.state;
     if (route === 'sign in' || route === 'register') {
-      this.setState({route: 'home'})
+      this.setState({route: routeInput})
     } else {
-      this.setState({route: 'sign in'})
+      this.setState({route: routeInput})
     }
+    // route = routeInput;
   };
 
   loadUser = (data) => {
@@ -37,15 +39,15 @@ class App extends Component {
   };
 
   render() {
+    const { onRouteChange, loadUser, onRegisterClickFromSignInPage } = this;
     switch (this.state.route) {
       case 'register':
-        return <Register onRouteChange={this.onRouteChange} loadUser={this.loadUser}/>;
+        return <Register onRouteChange={onRouteChange} loadUser={loadUser}/>;
       case 'home':
-        return <p>`Welcome ${this.state.user.name}`</p>;
+        return <p>Welcome {this.state.user.name}</p>;
       default:
-        return <SignIn/>;
+        return <SignIn onRouteChange={onRouteChange} loadUser={loadUser} onRegisterClickFromSignInPage={onRegisterClickFromSignInPage}/>;
     }
-
 
   }
 

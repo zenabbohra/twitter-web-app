@@ -2,9 +2,10 @@
 
 exports[`<Signin /> renders has one <Button/> 1`] = `
 <WithStyles(ForwardRef(Button))
-  className="makeStyles-submit-4"
-  color="secondary"
+  className="submit"
+  color="primary"
   fullWidth={true}
+  onClick={[Function]}
   type="submit"
   variant="contained"
 >
@@ -31,6 +32,7 @@ Array [
     label="Email Address"
     margin="normal"
     name="email"
+    onChange={[Function]}
     required={true}
     variant="outlined"
   />,
@@ -41,6 +43,7 @@ Array [
     label="Password"
     margin="normal"
     name="password"
+    onChange={[Function]}
     required={true}
     type="password"
     variant="outlined"
