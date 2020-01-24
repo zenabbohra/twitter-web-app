@@ -8,7 +8,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      route: 'user profile',
+      route: 'sign in',
       user: {
         name: '',
         email: ''
@@ -17,15 +17,13 @@ class App extends Component {
   }
 
   onRouteChange = (routeInput) => {
-    let {route} = this.state;
-    if (route === 'sign in' || route === 'register') {
-      this.setState({route: routeInput})
-    } else {
-      this.setState({route: routeInput})
-    }
+    // let {route} = this.state;
+    console.log('OnRouteChange function');
+    this.setState({route: routeInput})
   };
 
   loadUser = (data) => {
+    console.log('render because of loadUser method');
     this.setState({
       user: {
         name: data.name,
@@ -41,13 +39,14 @@ class App extends Component {
   render() {
     const {onRouteChange, loadUser, onRegisterClickFromSignInPage} = this;
     const { user, route } = this.state;
+    console.log('page renders', route);
     switch (this.state.route) {
       case 'register':
         return <Register onRouteChange={onRouteChange} loadUser={loadUser}/>;
       case 'home':
-        return <Navigation userName={user.name} route={route}/>;
+        return <Navigation userName={user.name} route={route} onRouteChange={onRouteChange}/>;
       case 'user profile':
-        return <Navigation route={route}/>;
+        return <Navigation route={route} onRouteChange={onRouteChange}/>;
       default:
         return <SignIn
           onRouteChange={onRouteChange}

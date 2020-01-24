@@ -1,24 +1,31 @@
 import React from 'react';
 import SearchBox from './SearchBox';
-import Home from './Home';
+import HomeIcon from '@material-ui/icons/Home';
 import {Box} from "@material-ui/core";
 import Link from "@material-ui/core/Link";
 import Typography from "@material-ui/core/Typography";
+import styles from './Navigation.module.css';
 
-const Navigation = ({route, userName }) => {
+const Navigation = ({route, userName, onRouteChange }) => {
   const preventDefault = event => event.preventDefault();
     return <Box display="flex" alignItems="center" justifyContent="space-between" minHeight={48} marginLeft={2}>
       {
         route === 'home' ?
-          <Typography variant="body1" color="Primary" component="p">
-            Welcome {userName}
+          <Typography variant="body1" color="primary" component="p">
+            Welcome
+            <Link href="#" onClick={ (event) => {preventDefault(event); onRouteChange('user profile')} } variant="h5" >
+              {' ' + userName}
+            </Link>
           </Typography> :
-          <Home/>
+          <Link onClick={() => onRouteChange('home')} href="/" className={styles.link} color="primary" variant="body1">
+            <HomeIcon className={styles.icon}/>
+            Home
+          </Link>
       }
       <Box display="flex" alignItems="center">
         <SearchBox/>
         <Box margin={2}>
-          <Link href="#" onClick={preventDefault} variant="h5">
+          <Link href="#" onClick={ (event) => {preventDefault(event); onRouteChange('sign in')} } variant="h5">
             Sign out
           </Link>
         </Box>
