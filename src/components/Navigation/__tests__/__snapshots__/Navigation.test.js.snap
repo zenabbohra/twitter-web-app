@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Navigation/> renders has one <HomeIcon/> 1`] = `
+<HomeIcon
+  className="icon"
+/>
+`;
+
+exports[`<Navigation/> renders has one <SearchBox/> 1`] = `<SearchBox />`;
+
+exports[`<Navigation/> renders has three <Link/> 1`] = `
+Array [
+  <WithStyles(ForwardRef(Link))
+    className="link"
+    color="primary"
+    href="/"
+    onClick={[Function]}
+    variant="body1"
+  >
+    <HomeIcon
+      className="icon"
+    />
+    Home
+  </WithStyles(ForwardRef(Link))>,
+  <WithStyles(ForwardRef(Link))
+    href="#"
+    onClick={[Function]}
+    variant="h5"
+  >
+    Sign out
+  </WithStyles(ForwardRef(Link))>,
+]
+`;
