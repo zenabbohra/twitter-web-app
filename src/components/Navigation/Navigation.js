@@ -17,7 +17,7 @@ const Navigation = ({route, userName, onRouteChange }) => {
               {' ' + userName}
             </Link>
           </Typography> :
-          <Link onClick={() => onRouteChange('home')} href="/" className={styles.link} color="primary" variant="body1">
+          <Link onClick={(event) => {preventDefault(event); onRouteChange('home')}} href="/" className={styles.link} color="primary" variant="body1">
             <HomeIcon className={styles.icon}/>
             Home
           </Link>

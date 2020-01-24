@@ -3,6 +3,10 @@ import './App.css';
 import SignIn from '../components/Signin/Signin';
 import Register from "../components/Register/Register";
 import Navigation from '../components/Navigation/Navigation';
+import SideNavigation from "../components/Navigation/SideNavigation";
+import Box from "@material-ui/core/Box";
+import PostTweet from "../components/PostTweet/PostTweet";
+import Feeds from "../components/Feeds/Feeds";
 
 class App extends Component {
   constructor() {
@@ -38,13 +42,22 @@ class App extends Component {
 
   render() {
     const {onRouteChange, loadUser, onRegisterClickFromSignInPage} = this;
-    const { user, route } = this.state;
+    const {user, route} = this.state;
     console.log('page renders', route);
     switch (this.state.route) {
       case 'register':
         return <Register onRouteChange={onRouteChange} loadUser={loadUser}/>;
       case 'home':
-        return <Navigation userName={user.name} route={route} onRouteChange={onRouteChange}/>;
+        return <Box display='flex' flexDirection='column'>
+          <Navigation userName={user.name} route={route} onRouteChange={onRouteChange}/>
+          <Box display='flex'>
+            <SideNavigation/>
+            <Box display='flex' flexDirection='column'>
+              <PostTweet/>
+              <Feeds/>
+            </Box>
+          </Box>
+        </Box>;
       case 'user profile':
         return <Navigation route={route} onRouteChange={onRouteChange}/>;
       default:
