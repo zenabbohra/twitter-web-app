@@ -36,7 +36,7 @@ class Register extends Component {
   onSignUpButtonClick = () => {
     const { registerName, registerEmail, registerPassword } = this.state;
     const { onRouteChange, loadUser } = this.props;
-      fetch('http://localhost:3000/register', {
+      fetch('http://circle.test/api/register', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({

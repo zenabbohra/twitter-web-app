@@ -29,7 +29,7 @@ export default class SignIn extends Component {
   onButtonClick = () => {
     const { signInEmail, signInPassword } = this.state;
     const { loadUser, onRouteChange } = this.props;
-    fetch('http://localhost:3000/signin', {
+    fetch('http://circle.test/api/signin', {
       method: 'POST',
       headers: {'Content-Type' : 'application/json'},
       body: JSON.stringify({
@@ -39,13 +39,15 @@ export default class SignIn extends Component {
     })
       .then(response => response.json())
       .then(user => {
-        if(user.id) {
+        if(user) {
           loadUser(user);
           onRouteChange('home');
+
         }else{
-          console.log('error:', user);
+          console.log('error:', 'User could not be authenticated');
         }
       })
+      .catch(err => console.log(err));
   };
 
   render() {
